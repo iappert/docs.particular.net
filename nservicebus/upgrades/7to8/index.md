@@ -91,3 +91,8 @@ The `NServiceBus.Host` package is deprecated. See the [NServiceBus Host upgrade 
 ## NServiceBus Azure Host
 
 The `NServiceBus.Hosting.Azure` and `NServiceBus.Hosting.Azure.HostProcess` are deprecated.See the [NServiceBus Azure Host upgrade guide](/nservicebus/upgrades/acs-host-7to8.md) for details and alternatives.
+
+
+## Meaningful exceptions when stopped
+
+The core is now throwing an `InvalidOperationException` when invoking message opererations on `IMessageSession` when the endpoint instance is stopping or stopped to indicate that the instance can no longer be used.
